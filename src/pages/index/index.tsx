@@ -3,7 +3,7 @@ import { View, Text, OpenData } from "@tarojs/components";
 import { AtButton } from "taro-ui";
 
 import "taro-ui/dist/style/components/button.scss"; // 按需引入
-import "./index.styl";
+import styles from "./index.module.styl";
 
 export default class Index extends Component<PropsWithChildren> {
   componentDidMount() {}
@@ -16,7 +16,7 @@ export default class Index extends Component<PropsWithChildren> {
 
   render() {
     return (
-      <View className="index">
+      <View className={styles.container}>
         <OpenData type="userNickName"></OpenData>
         <Text>Hello world!</Text>
         <AtButton type="primary">I need Taro UI</AtButton>

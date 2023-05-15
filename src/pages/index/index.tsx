@@ -1,8 +1,10 @@
 import { Component, PropsWithChildren } from "react";
 import { View, Text } from "@tarojs/components";
-import { AtButton } from "taro-ui";
+import { AtButton, AtAvatar } from "taro-ui";
 
 import "taro-ui/dist/style/components/button.scss"; // 按需引入
+import "taro-ui/dist/style/components/loading.scss";
+import "taro-ui/dist/style/components/avatar.scss";
 import styles from "./index.module.styl";
 
 export default class Index extends Component<PropsWithChildren> {
@@ -17,17 +19,29 @@ export default class Index extends Component<PropsWithChildren> {
   render() {
     return (
       <View className={styles.container}>
-        <view className={styles.content}>
-          <Text>Hello world!</Text>
-          <AtButton type="primary">I need Taro UI</AtButton>
-          <Text>Taro UI 支持 Vue 了吗？</Text>
-          <AtButton type="primary" circle>
-            支持
-          </AtButton>
-          <Text>共建？</Text>
-          <AtButton type="secondary" circle>
-            来
-          </AtButton>
+        <View className={styles.avatar}>
+          <AtAvatar
+            size="large"
+            circle
+            openData={{ type: "userAvatarUrl" }}
+            image="https://jdc.jd.com/img/200"
+          ></AtAvatar>
+        </View>
+        <view className={styles.list}>
+          <View className={styles.list__item}>
+            <AtButton type="primary">主按钮</AtButton>
+          </View>
+          <View className={styles.list__item}>
+            <AtButton type="secondary">次文案</AtButton>
+          </View>
+          <View className={styles.list__item}>
+            <AtButton loading type="primary">
+              Loading按钮
+            </AtButton>
+          </View>
+          <View style={{ textAlign: "center", marginTop: "5px" }}>
+            <Text style={{ color: "#999" }}>https://imcoco.top</Text>
+          </View>
         </view>
       </View>
     );

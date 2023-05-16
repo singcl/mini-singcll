@@ -23,8 +23,8 @@ export default class Index extends Component<PropsWithChildren> {
           <AtAvatar
             size="large"
             circle
-            openData={{ type: "userAvatarUrl" }}
-            image="https://jdc.jd.com/img/200"
+            // openData={{ type: "userAvatarUrl" }}
+            image="https://cravatar.cn/avatar/b12acb362166a8247431fbda7a431095"
           ></AtAvatar>
         </View>
         <view className={styles.list}>
